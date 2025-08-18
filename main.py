@@ -2,7 +2,7 @@ import asyncio
 from astrbot.api.event import filter, AstrMessageEvent
 from astrbot.api.star import Context, Star, register
 
-@register("qqx5_matching_begins", "Chenzb", "一个简单的 匹配倒计时 插件", "1.2.1")
+@register("qqx5_matching_begins", "Chenzb", "一个简单的 匹配倒计时 插件", "1.1.0")
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
@@ -11,14 +11,14 @@ class MyPlugin(Star):
     async def initialize(self):
         """插件初始化"""
 
-    # 方式一：命令触发
+    # 命令触发（保留）
     @filter.command("匹配倒计时")
     async def countdown_command(self, event: AstrMessageEvent):
         await self._do_countdown(event)
 
-    # 方式二：关键词触发（消息匹配）
-    @filter.on_message()   # ✅ 用装饰器监听消息
-    async def countdown_keyword(self, event: AstrMessageEvent):
+    # 消息触发（关键词）
+    @filter.event_message_type(filter.EventMessageType.ALL)
+    async def on_all_message(self, event: AstrMessageEvent):
         text = event.message.get_plain_text().strip()
         if text in self.trigger_words:
             await self._do_countdown(event)
@@ -29,7 +29,7 @@ class MyPlugin(Star):
             await event.send(event.plain_result(str(i)))
             await asyncio.sleep(1)
 
-    # 设置触发词（可以多个）
+    # 设置触发词
     @filter.command("设置触发词")
     async def set_trigger(self, event: AstrMessageEvent, *words: str):
         if not words:
