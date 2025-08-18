@@ -1,5 +1,5 @@
 name: qqx5_matching_begins # 这是你的插件的唯一识别名。
 desc: 这是 AstrBot 的默认插件，支持关键词回复。 # 插件简短描述
-version: v1.0.2 # 插件版本号。格式：v1.1.1 或者 v1.1
+version: v1.0.3 # 插件版本号。格式：v1.1.1 或者 v1.1
 author: Chenzb # 作者
 repo: https://github.com/chenzzzzzb/astrbot_plugin_qqx5_matching_begins # 插件的仓库地址
