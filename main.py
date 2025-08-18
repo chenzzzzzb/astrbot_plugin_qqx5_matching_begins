@@ -16,8 +16,8 @@ class MyPlugin(Star):
     async def countdown(self, event: AstrMessageEvent):
         """倒计时 3-2-1-开始"""
         for i in [3, 2, 1, "开始！"]:
-            yield event.plain_result(str(i))
-            await asyncio.sleep(0.6)  # 每条消息之间等待 0.6 秒
+            await event.send(event.plain_result(str(i)))
+            await asyncio.sleep(0.8)  # 每条消息之间等待 0.8 秒
 
     async def terminate(self):
         """插件销毁"""
