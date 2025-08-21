@@ -6,7 +6,7 @@ from astrbot.api.star import Context, Star, register
 class MyPlugin(Star):
     def __init__(self, context: Context):
         super().__init__(context)
-        self.trigger_word = "匹配倒计时"  # 默认关键词集合
+        self.trigger_word = "倒计时"  # 默认关键词
 
     async def initialize(self):
         """插件初始化"""
