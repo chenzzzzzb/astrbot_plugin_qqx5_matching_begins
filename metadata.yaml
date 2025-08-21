@@ -1,5 +1,5 @@
 name: qqx5_matching_begins # 这是你的插件的唯一识别名。
 desc: 这是 qq炫舞手游 的排位匹配倒计时插件，输入关键词可以让 bot 分段回复 3、2、1、开始！。 # 插件简短描述
-version: v1.1.2 # 插件版本号。格式：v1.1.1 或者 v1.1
+version: v1.1.3 # 插件版本号。格式：v1.1.1 或者 v1.1
 author: Chenzb # 作者
 repo: https://github.com/chenzzzzzb/astrbot_plugin_qqx5_matching_begins # 插件的仓库地址
